@@ -1,4 +1,4 @@
-FROM node:lts-slim
+FROM node:12.22.6-slim
 
 ENV NPM_CONFIG_LOGLEVEL info
 
