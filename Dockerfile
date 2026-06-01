@@ -1,10 +1,9 @@
-FROM node:22.20.0
+FROM node:22.20.0-slim
 
 ENV NPM_CONFIG_LOGLEVEL info
 
 RUN apt-get update -y && \
-    apt-get install -qqy --no-install-recommends && \
-    apt-get install -y ssh rsync openssh-client git curl zip jq python3-pip && \
+    apt-get install -qqy --no-install-recommends rsync openssh-client git curl zip jq python3-pip && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN npm install -g retire
