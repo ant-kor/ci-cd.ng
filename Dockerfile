@@ -1,4 +1,4 @@
-FROM node:24.16.0-slim
+FROM node:24.21.0-slim
 
 ENV NPM_CONFIG_LOGLEVEL info
 
@@ -7,4 +7,5 @@ RUN apt-get update -y && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN npm install -g retire
+RUN curl -sL https://sentry.io/get-cli/ | sh
 RUN python3 -m pip install semgrep --break-system-packages
